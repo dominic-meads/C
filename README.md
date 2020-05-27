@@ -1,2 +1,2 @@
-# C-C-
-random assortment of C/C++
+# C
+random assortment of C
