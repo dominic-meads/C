@@ -7,9 +7,9 @@ Practice reversing strings
 
 int main()
 {
-    char my_string[12] = "hello world";
+    char my_string[11] = "hello world";
     
-    for(int i = 11; i >= 0; i--)  // count down indecies to reverse string
+    for(int i = 10; i >= 0; i--)  // count down indecies to reverse string
     {
         printf("%c",my_string[i]);
     }
