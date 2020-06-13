@@ -1,4 +1,4 @@
-// Just a quick messaround sketch to help me get better at C
+// Just a quick messaround sketch printing and reading to files to help me get better at C
 
 #include <stdio.h>
 #include <math.h>
