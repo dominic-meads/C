@@ -1,6 +1,5 @@
 /******************************************************************************
 Dot product calculator
-Dominic Meads
 
 *******************************************************************************/
 #include <stdio.h>
@@ -26,24 +25,24 @@ int main()
     {  
         for(int j = 0; j < 3; j++)  // columns
         {  
-            dot_matrix[i][j] = my_matrix1[i][1] * my_matrix2[1][j] + my_matrix1[i][2] * my_matrix2[2][j] + my_matrix1[i][3] * my_matrix2[3][j];
+            dot_matrix[i][j] = my_matrix1[i][0] * my_matrix2[0][j] + my_matrix1[i][1] * my_matrix2[1][j] + my_matrix1[i][2] * my_matrix2[2][j];
         }  // end for(j)
     }  // end for (i)
     
     // print result
     printf("the dot product is:\n");
     // row 1
-    printf("%d ",dot_matrix[1][1]);
-    printf("%d ",dot_matrix[1][2]);
-    printf("%d\n",dot_matrix[1][3]);
+    printf("%d ",dot_matrix[0][0]);
+    printf("%d ",dot_matrix[0][1]);
+    printf("%d\n",dot_matrix[0][2]);
     // row 2
-    printf("%d ",dot_matrix[2][1]);
-    printf("%d ",dot_matrix[2][2]);
-    printf("%d\n",dot_matrix[2][3]);
+    printf("%d ",dot_matrix[1][0]);
+    printf("%d ",dot_matrix[1][1]);
+    printf("%d\n",dot_matrix[1][2]);
     // row 3
-    printf("%d ",dot_matrix[3][1]);
-    printf("%d ",dot_matrix[3][2]);
-    printf("%d\n",dot_matrix[3][3]);
+    printf("%d ",dot_matrix[2][0]);
+    printf("%d ",dot_matrix[2][1]);
+    printf("%d\n",dot_matrix[2][2]);
     
     /* answer should be 
     
