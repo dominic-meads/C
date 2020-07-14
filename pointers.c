@@ -33,5 +33,5 @@ void add_two(int *array, int size)
     for(int i = 0; i < size; i++)
     {
         array[i] += 2;
-    }  // dont need to return anything because array is still stored in memory
+    }  // dont need to return anything because array is dereferenced so the caller sees all changes
 }
