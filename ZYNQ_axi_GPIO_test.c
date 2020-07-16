@@ -6,7 +6,7 @@
 
 int main()
 {
-	XGpio input,output;
+	XGpio input,output;  // XGpio is a structure
 	int switch_data = 0;
 	 
 	XGpio_Initialize(&input, XPAR_AXI_GPIO_0_DEVICE_ID);    //initialize input XGpio variable
