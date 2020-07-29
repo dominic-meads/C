@@ -1,6 +1,6 @@
 /******************************************************************************
 
-creates a non-circular (shifts in zeros) right shift of elements by one index
+creates a non-circular (shifts in zeros) right shift of elements in an array by one index
 
 *******************************************************************************/
 #include <stdio.h>
