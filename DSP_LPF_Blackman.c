@@ -1,7 +1,5 @@
 /******************************************************************************
-
 convolves an array that is shifting
-
 *******************************************************************************/
 
 #include <stdio.h>
@@ -30,15 +28,15 @@ int main()
     
     copy_array(my_array, my_array_copy, my_size);  // make a copy of the array for shifting
     
-    double kernel[16] = {};  // filter kernel (array of filter coefficients) MUST BE TYPE DOUBLE
+    double kernel[17] = {};  // filter kernel (array of filter coefficients) MUST BE TYPE DOUBLE
     int kernel_size = sizeof(kernel)/sizeof(kernel[0]);  // calculate length of kernel
-    double fc = 0.25;  // cuttoff frequency of 0.25*fsample
+    double fc = 0.020;  // cuttoff frequency of 0.020*fsample
     
     FILE * fp;
     fp = fopen("kernel.txt","w+");
     
     Blackman_kernel(kernel, kernel_size, fc);
-    for(int ii = 0; ii < 16; ii++)
+    for(int ii = 0; ii < 17; ii++)
     {
         printf("%f ",kernel[ii]);
         fprintf(fp,"%f\n",kernel[ii]);
@@ -83,11 +81,16 @@ void print_array(int * array, int size)
 }
 
 
-void Blackman_kernel(double * array, int size, double fc)
+void Blackman_kernel(double * h, int size, double fc)
 {
     for(int i = 0; i < size; i++)
     {
-        array[i] = (sin(2*M_PI*fc*(i-size/2))/(i-size/2)) * (0.42 - 0.5*cos(2*M_PI*i/size) + 0.08*cos(2*M_PI*i/size));  // the Blackman window has great stop band attenuation
-        //         ^------sinc function------^   ^-------------------Blackman window---------------------^ 
+        h[i] = (sin(2*M_PI*fc*(i-size/2))/(i-size/2)) * (0.42 - 0.5*cos(2*M_PI*i/size) + 0.08*cos(4*M_PI*i/size));  // the Blackman window has great stop band attenuation
+        //     ^-------------sinc function----------^   ^-------------------Blackman window---------------------^ 
+        
+        if (i == size/2)
+        {
+           h[i] = 2*M_PI*fc;  // take care of Nan 
+        }
     }
 }
