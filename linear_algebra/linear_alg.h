@@ -16,3 +16,15 @@ double mag(vector vect)
     
     return magnitude = sqrt(vect.x + vect.y + vect.z);
 }
+
+vector unit_vect(vector vect)
+{
+    vector unit;
+    double magnitude = mag(vect);
+    
+    unit.x = vect.x/magnitude;
+    unit.y = vect.y/magnitude;
+    unit.z = vect.z/magnitude;
+    
+    return unit;
+}
