@@ -1,10 +1,14 @@
 #include <stdio.h>
 
+#define state_1 1
+#define state_2 2
+#define state_3 3
+
+// need to make a way to stay in state_1 if incorrect character is input
+
 int main()
 {
-    int state_1 = 1;
-    int state_2 = 2;
-    int state_3 = 3;
+
     int STATE = 1;  // init to state_1
     
     char user_input;  // input from screen
@@ -12,7 +16,8 @@ int main()
     switch(STATE){
         case state_1 : 
                         scanf("%c", &user_input);
-                        if(user_input = 'a'){
+                        printf("user input is %c\n",user_input);
+                        if(user_input == 'a'){
                             printf("transition to state_2");
                             STATE = state_2;
                         }
