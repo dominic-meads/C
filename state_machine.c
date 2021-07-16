@@ -16,19 +16,38 @@ int main()
     switch(STATE){
         case state_1 : 
                         scanf("%c", &user_input);
-                        printf("user input is %c\n",user_input);
+                        printf("first user input is %c\n",user_input);
                         if(user_input == 'a'){
-                            printf("transition to state_2");
+                            printf("transition to state_2\n");
                             STATE = state_2;
+                            scanf("%c", &user_input);
                         }
                         else{
-                            printf("state_1");
+                            printf("staying in state_1\n");
                             STATE = state_1;
                         }
-                        break;
-        case state_2: 
-                        printf("state_2");
-                        break;
+        case state_2:   
+                        printf("2nd user input is %c\n",user_input);
+                        if(user_input == 'b'){
+                            printf("transition to state_3\n");
+                            STATE = state_3;
+                        }
+                        else{
+                            printf("staying in state_2\n");
+                            STATE = state_2;
+                        }
+        case state_3: 
+                        scanf("%c", &user_input);
+                        printf("3rd user input is %c\n",user_input);
+                        if(user_input == 'c'){
+                            printf("you entered the correct sequence!\n");
+                            STATE = state_3;
+                        }
+                        else{
+                            printf("staying in state_3\n");
+                            STATE = state_3;
+                        }
+
     }
     
     
